@@ -46,6 +46,27 @@
       margin-left: -1em;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      let current = 0;
+
+      const scrollToSection = (index) => {
+        if (index >= 0 && index < sections.length) {
+          sections[index].scrollIntoView({ behavior: "smooth" });
+          current = index;
+        }
+      };
+
+      document.getElementById("next").addEventListener("click", () => scrollToSection(current + 1));
+      document.getElementById("prev").addEventListener("click", () => scrollToSection(current - 1));
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") scrollToSection(current + 1);
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") scrollToSection(current - 1);
+      });
+    });
+  </script>
 </head>
 <body>
   <section>
@@ -113,5 +134,9 @@
       <li>Physical expression of a living, evolving structure</li>
     </ul>
   </section>
+  <div style="position: fixed; bottom: 2rem; left: 2rem; right: 2rem; display: flex; justify-content: space-between; pointer-events: none;">
+    <button id="prev" style="pointer-events: auto; font-size: 1.5rem;">⬅︎</button>
+    <button id="next" style="pointer-events: auto; font-size: 1.5rem;">➡︎</button>
+  </div>
 </body>
 </html>
