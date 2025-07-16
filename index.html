@@ -56,6 +56,15 @@
       width: 1em;
       margin-left: -1em;
     }
+    #lang-toggle {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      font-size: 1.2rem;
+      color: #888;
+      z-index: 100;
+      cursor: pointer;
+    }
     #slide-counter {
       position: fixed;
       top: 2rem;
@@ -127,31 +136,40 @@
         if (e.key === "ArrowRight" || e.key === "ArrowDown") scrollToSection(current + 1);
         if (e.key === "ArrowLeft" || e.key === "ArrowUp") scrollToSection(current - 1);
       });
-    });
-  </script>
+    document.getElementById("lang-toggle").addEventListener("click", () => {
+        const elements = document.querySelectorAll('[data-en]');
+        const currentLang = document.documentElement.lang;
+        const newLang = currentLang === 'en' ? 'jp' : 'en';
+        document.documentElement.lang = newLang;
+
+        elements.forEach(el => {
+          el.innerHTML = el.dataset[newLang];
+        });
+      });
 </head>
 <body>
+  <div id="lang-toggle">EN / JP</div>
   <div id="slide-counter"></div>
   <section>
-    <h1>KOGEI</h1>
+    <h1 data-en="KOGEI" data-jp="工芸">KOGEI</h1>
   </section>
   <section style="background-image: url('images/cup.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>Vision & Values</h2>
-      <p>We are building a self-sustaining cultural enterprise that communicates <b>HUMANISM</b> and enriches the meaning of daily life. Revenue and growth are necessary to communicate values and sustain a culture and community. The Kogei project is durable and will continue beyond the founders.</p>
+      <h2 data-en="Vision & Values" data-jp="ビジョンと価値観">Vision & Values</h2>
+      <p data-en="We are building a self-sustaining cultural enterprise that communicates <b>HUMANISM</b> and enriches the meaning of daily life. Revenue and growth are necessary to communicate values and sustain a culture and community. The Kogei project is durable and will continue beyond the founders." data-jp="私たちは、<b>ヒューマニズム</b>を伝え、日々の生活の意味を豊かにする、自立した文化事業を構築しています。価値観を伝え、文化とコミュニティを維持するためには、収益と成長が必要です。工芸プロジェクトは永続的であり、創設者を超えて継続していきます。">We are building a self-sustaining cultural enterprise that communicates <b>HUMANISM</b> and enriches the meaning of daily life. Revenue and growth are necessary to communicate values and sustain a culture and community. The Kogei project is durable and will continue beyond the founders.</p>
     </div>
   </section>
 
   <section style="background-image: url('images/activity.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>Core Activities</h2>
+      <h2 data-en="Core Activities" data-jp="主な活動">Core Activities</h2>
       <ul>
-        <li><strong>Media:</strong> Magazine, books, podcast, newsletter, YouTube</li><li></li>
-        <li><strong>Sell:</strong> Annual Kyoto Fair (October 2026), online shop</li><li></li>
-        <li><strong>Education:</strong> Online learning, workshops, lectures</li><li></li>
-        <li><strong>Artist Editions:</strong> Collaborations between kogei craftsmen and contemporary artists</li>
+        <li data-en="<strong>Media:</strong> Magazine, books, podcast, newsletter, YouTube" data-jp="<strong>メディア:</strong> 雑誌、書籍、ポッドキャスト、ニュースレター、YouTube"><strong>Media:</strong> Magazine, books, podcast, newsletter, YouTube</li><li></li>
+        <li data-en="<strong>Sell:</strong> Annual Kyoto Fair (October 2026), online shop" data-jp="<strong>販売:</strong> 年次京都フェア（2026年10月）、オンラインショップ"><strong>Sell:</strong> Annual Kyoto Fair (October 2026), online shop</li><li></li>
+        <li data-en="<strong>Education:</strong> Online learning, workshops, lectures" data-jp="<strong>教育:</strong> オンライン学習、ワークショップ、講演会"><strong>Education:</strong> Online learning, workshops, lectures</li><li></li>
+        <li data-en="<strong>Artist Editions:</strong> Collaborations between kogei craftsmen and contemporary artists" data-jp="<strong>アーティストエディション:</strong> 工芸職人と現代アーティストとのコラボレーション"><strong>Artist Editions:</strong> Collaborations between kogei craftsmen and contemporary artists</li>
       </ul>
     </div>
   </section>
@@ -161,12 +179,12 @@
   <section style="background-image: url('images/fair.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>First Step<br>October 2026 Fair</h2>
+      <h2 data-en="First Step<br>October 2026 Fair" data-jp="第一歩<br>2026年10月フェア">First Step<br>October 2026 Fair</h2>
       <ul>
-        <li>Kyoto venue secured</li>
-        <li>First revenue opportunity + proof of concept</li>
-        <li>Launch online shop in parallel</li>
-        <li>Begin hiring: project manager, logistics, communications</li>
+        <li data-en="Kyoto venue secured" data-jp="京都の会場確保">Kyoto venue secured</li>
+        <li data-en="First revenue opportunity + proof of concept" data-jp="最初の収益機会と概念実証">First revenue opportunity + proof of concept</li>
+        <li data-en="Launch online shop in parallel" data-jp="オンラインショップを並行して立ち上げ">Launch online shop in parallel</li>
+        <li data-en="Begin hiring: project manager, logistics, communications" data-jp="採用開始：プロジェクトマネージャー、ロジスティクス、コミュニケーション">Begin hiring: project manager, logistics, communications</li>
       </ul>
     </div>
   </section>
@@ -174,10 +192,10 @@
    <section style="background-image: url('images/founders.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>Our Role as Founders</h2>
+      <h2 data-en="Our Role as Founders" data-jp="創設者としての私たちの役割">Our Role as Founders</h2>
       <ul>
-        <li>Build the team and systems.</li>
-        <li>Focus on values and culture</li>
+        <li data-en="Build the team and systems." data-jp="チームとシステムを構築する。">Build the team and systems.</li>
+        <li data-en="Focus on values and culture" data-jp="価値観と文化に焦点を当てる">Focus on values and culture</li>
       </ul>
     </div>
   </section>
@@ -185,12 +203,12 @@
   <section style="background-image: url('images/system.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>Mid-Term Vision <br> <small>Building the Organization</small></h2>
+      <h2 data-en="Mid-Term Vision <br> <small>Building the Organization</small>" data-jp="中期ビジョン<br><small>組織の構築</small>">Mid-Term Vision <br> <small>Building the Organization</small></h2>
       <ul>
-        <li>Form small teams around each activity</li>
-        <li>Create standard operating procedures</li>
-        <li>Delegate operations and transition to executive oversight</li>
-        <li>Prepare groundwork for future space</li>
+        <li data-en="Form small teams around each activity" data-jp="各活動を中心に小規模なチームを結成">Form small teams around each activity</li>
+        <li data-en="Create standard operating procedures" data-jp="標準的な運用手順を作成">Create standard operating procedures</li>
+        <li data-en="Delegate operations and transition to executive oversight" data-jp="業務を委任し、経営監督に移行">Delegate operations and transition to executive oversight</li>
+        <li data-en="Prepare groundwork for future space" data-jp="将来のスペースの基礎を準備">Prepare groundwork for future space</li>
       </ul>
     </div>
   </section>
@@ -200,14 +218,14 @@
   <section style="background-image: url('images/building.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
-      <h2>Long-Term Vision <br> <small>The Building — Cultural HQ</small></h2>
+      <h2 data-en="Long-Term Vision <br> <small>The Building — Cultural HQ</small>" data-jp="長期ビジョン<br><small>建物 — カルチュラルHQ</small>">Long-Term Vision <br> <small>The Building — Cultural HQ</small></h2>
       <ul style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2;">
-        <li>bistro & cafe</li>
-        <li>store</li>
-        <li>gallery</li>
-        <li>co-working space</li>
-        <li>craft-themed boutique hotel</li>
-        <li>garden</li>
+        <li data-en="bistro & cafe" data-jp="ビストロ＆カフェ">bistro & cafe</li>
+        <li data-en="store" data-jp="店舗">store</li>
+        <li data-en="gallery" data-jp="ギャラリー">gallery</li>
+        <li data-en="co-working space" data-jp="コワーキングスペース">co-working space</li>
+        <li data-en="craft-themed boutique hotel" data-jp="工芸をテーマにしたブティックホテル">craft-themed boutique hotel</li>
+        <li data-en="garden" data-jp="庭園">garden</li>
       </ul>
     </div>
   </section>
