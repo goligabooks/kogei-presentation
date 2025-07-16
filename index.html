@@ -51,6 +51,7 @@
       right: 2rem;
       font-size: 1.2rem;
       color: #888;
+      z-index: 100;
     }
     .nav-button {
       pointer-events: auto;
@@ -77,15 +78,21 @@
       const slideCounter = document.getElementById("slide-counter");
       let current = 0;
 
-      const updateCounter = (index) => {
-        slideCounter.textContent = `${index + 1} / ${sections.length}`;
-      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Array.from(sections).indexOf(entry.target);
+            slideCounter.textContent = `${index + 1} / ${sections.length}`;
+            current = index;
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach(section => observer.observe(section));
 
       const scrollToSection = (index) => {
         if (index >= 0 && index < sections.length) {
           sections[index].scrollIntoView({ behavior: "smooth" });
-          current = index;
-          updateCounter(index);
         }
       };
 
@@ -96,8 +103,6 @@
         if (e.key === "ArrowRight" || e.key === "ArrowDown") scrollToSection(current + 1);
         if (e.key === "ArrowLeft" || e.key === "ArrowUp") scrollToSection(current - 1);
       });
-
-      updateCounter(0);
     });
   </script>
 </head>
