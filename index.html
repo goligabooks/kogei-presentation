@@ -92,6 +92,18 @@
       border-color: #aaa;
     }
 
+    #org-chart-slide {
+      align-items: stretch;
+    }
+
+    #org-chart-slide .mermaid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
     
   </style>
   
@@ -211,7 +223,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="org-chart-slide">
     <div class="mermaid">
       graph TD
         A["Founders: Ivan + Ota-san"]
