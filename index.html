@@ -229,27 +229,20 @@
         A["Founders: Ivan + Ota-san"]
 
         A --> B((Media))
-        B --> B_Lead([Media Lead])
-        B_Lead --> B_Editor[Editor]
-        B_Lead --> B_Prod[Production Support]
-        B --> B_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
+        B --> B_Sub["Magazine, Book, Podcast, Newsletter"]
+        B_Sub --> B_Editor[Media Editor]
 
         A --> C((Commerce))
-        C --> C_Lead([E-commerce Ops])
-        C_Lead --> C_Event[Event Planner]
-        C_Lead --> C_Log[Logistics]
-        C --> C_Sub{Online Shop, Kyoto Fair}
+        C --> C_Sub["Kyoto Fair, Online Store"]
+        C_Sub --> C_Fair[Fair Manager]
+        C_Sub --> C_Ecom[E-com Manager]
 
         A --> D((Education))
-        D --> D_Lead([Curriculum Lead])
-        D_Lead --> D_Community[Community Manager]
-        D_Lead --> D_Instructors[Guest Instructors]
-        D --> D_Sub{Online Learning, Workshops, Lectures}
+        D --> D_Sub["Online Learning, Workshops, Seminars"]
+        D_Sub --> D_Leader[Program Leader]
 
-        A --> E((Artist Collaboration))
-        E --> E_Lead([Project Manager])
-        E_Lead --> E_Liaison[Artist Liaison]
-        E_Lead --> E_Doc[Documentation / Archive]
+        A --> E((Art))
+        E --> E_PM[Project Manager]
     </div>
   </section>
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
