@@ -159,16 +159,20 @@
         if (e.key === "ArrowLeft" || e.key === "ArrowUp") scrollToSection(current - 1);
       });
 
-      document.getElementById("lang-toggle").addEventListener("click", () => {
+      const setLanguage = (lang) => {
         const elements = document.querySelectorAll('[data-en]');
-        const currentLang = document.documentElement.lang;
-        const newLang = currentLang === 'en' ? 'jp' : 'en';
-        document.documentElement.lang = newLang;
-
+        document.documentElement.lang = lang;
         elements.forEach(el => {
-          el.innerHTML = el.dataset[newLang];
+          el.innerHTML = el.dataset[lang];
         });
+      };
+
+      document.getElementById("lang-toggle").addEventListener("click", () => {
+        const newLang = document.documentElement.lang === 'en' ? 'jp' : 'en';
+        setLanguage(newLang);
       });
+
+      setLanguage('en');
     });
   </script>
 <body>
@@ -278,6 +282,7 @@
         %%{init: { 'theme': 'base', 'fontSize': '18px' }}%%
     </div>
   </section>
+    <section style="background-image: url('images/building.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
       <h2 data-en="Long-Term Vision <br> <small>The Building — Cultural HQ</small>" data-jp="長期ビジョン<br><small>建物 — カルチュラルHQ</small>">Long-Term Vision <br> <small>The Building — Cultural HQ</small></h2>
