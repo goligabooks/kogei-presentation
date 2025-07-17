@@ -225,8 +225,32 @@
   <section>
     <div class="mermaid">
       graph TD
-        A[Amber McKenzie] --> B[Ava Field]
-        A --> C[Peter Stevens]
+          A((Founders))
+          A --> I[Ivan: Strategy]
+          A --> O[Ota-san: External Relations]
+
+          A --> Media((Media))
+          Media --> ML[Media Lead]
+          ML --> M_Editor[Editor]
+          ML --> M_Prod[Production Support]
+          Media --> M_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
+
+          A --> Commerce((Commerce))
+          Commerce --> CL[E-commerce Ops]
+          CL --> C_Event[Event Planner]
+          CL --> C_Log[Logistics]
+          Commerce --> C_Sub{Online Shop, Kyoto Fair}
+
+          A --> Education((Education))
+          Education --> EL[Curriculum Lead]
+          EL --> E_Community[Community Manager]
+          EL --> E_Instructors[Guest Instructors]
+          Education --> E_Sub{Online Learning, Workshops, Lectures}
+
+          A --> Artist((Artist Collaboration))
+          Artist --> AL[Project Manager]
+          AL --> A_Liaison[Artist Liaison]
+          AL --> A_Doc[Documentation / Archive]
     </div>
   </section>
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
