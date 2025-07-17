@@ -92,18 +92,7 @@
       border-color: #aaa;
     }
 
-    @media (max-width: 768px) {
-      h2 {
-        font-size: 2rem;
-      }
-      p, ul {
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-      }
-      section {
-        padding: 2rem;
-      }
-    }
+    
   </style>
   
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -227,37 +216,28 @@
       graph TD
         A["Founders: Ivan + Ota-san"]
 
-        subgraph Media
-          direction LR
-          B_Lead([Media Lead]) --> B_Editor[Editor]
-          B_Lead --> B_Prod[Production Support]
-          B_Lead --> B_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
-        end
-
-        subgraph Commerce
-          direction LR
-          C_Lead([E-commerce Ops]) --> C_Event[Event Planner]
-          C_Lead --> C_Log[Logistics]
-          C_Lead --> C_Sub{Online Shop, Kyoto Fair}
-        end
-
-        subgraph Education
-          direction LR
-          D_Lead([Curriculum Lead]) --> D_Community[Community Manager]
-          D_Lead --> D_Instructors[Guest Instructors]
-          D_Lead --> D_Sub{Online Learning, Workshops, Lectures}
-        end
-
-        subgraph "Artist Collaboration"
-          direction LR
-          E_Lead([Project Manager]) --> E_Liaison[Artist Liaison]
-          E_Lead --> E_Doc[Documentation / Archive]
-        end
-
         A --> B((Media))
+        B --> B_Lead([Media Lead])
+        B_Lead --> B_Editor[Editor]
+        B_Lead --> B_Prod[Production Support]
+        B --> B_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
+
         A --> C((Commerce))
+        C --> C_Lead([E-commerce Ops])
+        C_Lead --> C_Event[Event Planner]
+        C_Lead --> C_Log[Logistics]
+        C --> C_Sub{Online Shop, Kyoto Fair}
+
         A --> D((Education))
+        D --> D_Lead([Curriculum Lead])
+        D_Lead --> D_Community[Community Manager]
+        D_Lead --> D_Instructors[Guest Instructors]
+        D --> D_Sub{Online Learning, Workshops, Lectures}
+
         A --> E((Artist Collaboration))
+        E --> E_Lead([Project Manager])
+        E_Lead --> E_Liaison[Artist Liaison]
+        E_Lead --> E_Doc[Documentation / Archive]
     </div>
   </section>
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
