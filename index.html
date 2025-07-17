@@ -228,21 +228,36 @@
       graph TD
         A["Founders"]
 
-        A --> B((Media))
+        subgraph Divisions
+          B((Media))
+          C((Commerce))
+          D((Education))
+          E((Art))
+        end
+
+        A --> B
+        A --> C
+        A --> D
+        A --> E
+
         B --> B_Sub["Magazine, Book,<br>Podcast, Newsletter"]
         B_Sub --> B_Editor[Media Editor]
 
-        A --> C((Commerce))
-        C --> C_Sub["Fair, Online Store"]
+        C --> C_Sub["Fair,<br>Online Store"]
         C_Sub --> C_Fair[Fair Manager]
         C_Sub --> C_Ecom[E-com Manager]
 
-        A --> D((Education))
         D --> D_Sub["Online Learning,<br>Workshops, Seminars"]
         D_Sub --> D_Leader[Program Leader]
 
-        A --> E((Art))
         E --> E_PM[Project Manager]
+
+        style B_Editor fill:#f9f,stroke:#333,stroke-width:2px
+        style C_Fair fill:#f9f,stroke:#333,stroke-width:2px
+        style C_Ecom fill:#f9f,stroke:#333,stroke-width:2px
+        style D_Leader fill:#f9f,stroke:#333,stroke-width:2px
+        style E_PM fill:#f9f,stroke:#333,stroke-width:2px
+
         %%{init: { 'theme': 'base', 'fontSize': '18px' }}%%
     </div>
   </section>
