@@ -225,33 +225,30 @@
   <section>
     <div class="mermaid">
       graph TD
-          A((Founders))
-          A --> I[Ivan: Strategy]
-          A --> O[Ota-san: External Relations]
+        A["Founders: Ivan + Ota-san"]
 
-          A --> Media((Media))
-          Media --> ML[Media Lead]
-          ML --> M_Editor[Editor]
-          ML --> M_Prod[Production Support]
-          Media --> M_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
+        A --> B((Media))
+        B --> B_Lead([Media Lead])
+        B_Lead --> B_Editor[Editor]
+        B_Lead --> B_Prod[Production Support]
+        B --> B_Sub{Magazine, Books, Podcast, Newsletter, YouTube}
 
-          A --> Commerce((Commerce))
-          Commerce --> CL[E-commerce Ops]
-          CL --> C_Event[Event Planner]
-          CL --> C_Log[Logistics]
-          Commerce --> C_Sub{Online Shop, Kyoto Fair}
+        A --> C((Commerce))
+        C --> C_Lead([E-commerce Ops])
+        C_Lead --> C_Event[Event Planner]
+        C_Lead --> C_Log[Logistics]
+        C --> C_Sub{Online Shop, Kyoto Fair}
 
-          A --> Education((Education))
-          Education --> EL[Curriculum Lead]
-          EL --> E_Community[Community Manager]
-          EL --> E_Instructors[Guest Instructors]
-          Education --> E_Sub{Online Learning, Workshops, Lectures}
+        A --> D((Education))
+        D --> D_Lead([Curriculum Lead])
+        D_Lead --> D_Community[Community Manager]
+        D_Lead --> D_Instructors[Guest Instructors]
+        D --> D_Sub{Online Learning, Workshops, Lectures}
 
-          A --> Artist((Artist Collaboration))
-          Artist --> AL[Project Manager]
-          AL --> A_Liaison[Artist Liaison]
-          AL --> A_Doc[Documentation / Archive]
-      %%{init: { 'theme': 'base', 'fontSize': '24px' }}%%
+        A --> E((Artist Collaboration))
+        E --> E_Lead([Project Manager])
+        E_Lead --> E_Liaison[Artist Liaison]
+        E_Lead --> E_Doc[Documentation / Archive]
     </div>
   </section>
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
