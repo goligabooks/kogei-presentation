@@ -253,13 +253,13 @@
           B((Media))
           C((Commerce))
           D((Education))
-          E((Art))
+          E((工 + 芸))
         end
 
         A --> B
         A --> C
         A --> D
-        A --> E((工 + 芸))
+        A --> E
 
         B --> B_Sub["Magazine, Book,<br>Podcast, Newsletter"]
         B_Sub --> B_Editor[Media Editor]
@@ -282,6 +282,48 @@
         style A fill:#f9f,stroke:#333,stroke-width:2px
 
         %%{init: { 'theme': 'base', 'fontSize': '18px' }}%%
+    </div>
+  </section>
+
+  <section style="background-image: url('images/system.jpg'); background-size: cover; background-position: center; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
+    <div style="position: relative; z-index: 2;">
+      <h2 data-en="5-Year Business Plan" data-jp="5カ年事業計画">5-Year Business Plan</h2>
+      <div class="mermaid">
+        gantt
+          dateFormat  YYYY-MM-DD
+          title KOGEI 5-Year Business Plan
+
+          section Commerce
+          Online shop           :active,    com1, 2025-04-01, 2025-06-30
+          Kyoto Fair            :active,    com2, 2026-10-01, 2026-10-31
+
+          section Education
+          Platform dev          :active,    edu1, 2025-07-01, 2025-09-30
+          Launch                :active,    edu2, 2026-01-01, 2026-03-31
+
+          section Media
+          Newsletter/podcast    :active,    med1, 2025-10-01, 2025-12-31
+          Magazine              :active,    med2, 2026-04-01, 2026-06-30
+
+          section Artist Collaborations
+          Pilot                 :active,    art1, 2027-01-01, 2027-03-31
+          Full program          :active,    art2, 2027-07-01, 2027-09-30
+
+          section Major Milestones
+          Funding Seed $400K    :milestone, fund1, 2025-03-31, 2025-03-31
+          Funding Series A $800K:milestone, fund2, 2026-09-30, 2026-09-30
+          Funding Growth $1.5M  :milestone, fund3, 2028-03-31, 2028-03-31
+          Tokyo Cultural HQ Planning: milestone, hq1, 2026-01-01, 2026-12-31
+          Tokyo Cultural HQ Launch: milestone, hq2, 2027-01-01, 2027-12-31
+          International Paris   :milestone, int1, 2028-06-30, 2028-06-30
+          International Seoul   :milestone, int2, 2028-12-31, 2028-12-31
+          International Madrid  :milestone, int3, 2029-06-30, 2029-06-30
+          Self-sustainability Commerce: milestone, sscom, 2026-12-31, 2026-12-31
+          Self-sustainability Education: milestone, ssed, 2027-12-31, 2027-12-31
+          Self-sustainability Media: milestone, ssmed, 2027-12-31, 2027-12-31
+          Self-sustainability Artist Collab: milestone, ssart, 2027-12-31, 2027-12-31
+      </div>
     </div>
   </section>
     <section style="background-image: url('images/building.jpg'); background-size: cover; background-position: center; position: relative;">
