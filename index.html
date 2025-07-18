@@ -125,8 +125,6 @@
 
     #gantt-chart-slide .mermaid svg {
       width: 100%;
-      min-width: 1500px;
-      min-height: 800px;
     }
 
     section {
@@ -139,7 +137,35 @@
   
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({ startOnLoad: true });
+    mermaid.initialize({
+      startOnLoad: true,
+      gantt: {
+        use  : 'true',
+        axisFormatter: [
+          [ '%Y-%m-%d', (d) => d.getDay() === 1 ],
+          [ '%w', (d) => d.getDay() === 0 ],
+          [ '%W', (d) => d.getDay() === 1 ],
+          [ '%M', (d) => d.getMonth() === 0 ],
+          [ '%Q', (d) => d.getMonth() === 0 && d.getMonth() % 3 === 0 ],
+          [ '%Y', (d) => d.getMonth() === 0 ]
+        ],
+        leftPadding: 75,
+        rightPadding: 75,
+        barHeight: 20,
+        fontSize: 16,
+        numberSectionStyles: 4,
+        axisFormat: '%Y-%m-%d',
+        topPadding: 30,
+        sidePadding: 75,
+        taskFontSize: '16px',
+        taskTextMargin: 8,
+        taskPadding: 5,
+        rowHeight: 30,
+        wrap: true,
+        width: 1500,
+        height: 800
+      }
+    });
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
