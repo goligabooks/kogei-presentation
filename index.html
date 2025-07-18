@@ -110,23 +110,6 @@
       height: 100%;
     }
 
-    #gantt-chart-slide {
-      align-items: stretch;
-    }
-
-    #gantt-chart-slide .mermaid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      max-width: none; /* Keep this to override any default max-width */
-    }
-
-    #gantt-chart-slide .mermaid svg {
-      width: 100%;
-    }
-
     section {
       max-width: none;
       height: 100vh;
@@ -137,35 +120,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      gantt: {
-        use  : 'true',
-        axisFormatter: [
-          [ '%Y-%m-%d', (d) => d.getDay() === 1 ],
-          [ '%w', (d) => d.getDay() === 0 ],
-          [ '%W', (d) => d.getDay() === 1 ],
-          [ '%M', (d) => d.getMonth() === 0 ],
-          [ '%Q', (d) => d.getMonth() === 0 && d.getMonth() % 3 === 0 ],
-          [ '%Y', (d) => d.getMonth() === 0 ]
-        ],
-        leftPadding: 75,
-        rightPadding: 75,
-        barHeight: 20,
-        fontSize: 16,
-        numberSectionStyles: 4,
-        axisFormat: '%Y-%m-%d',
-        topPadding: 30,
-        sidePadding: 75,
-        taskFontSize: '16px',
-        taskTextMargin: 8,
-        taskPadding: 5,
-        rowHeight: 30,
-        wrap: true,
-        width: 2000,
-        height: 1000
-      }
-    });
+    mermaid.initialize({ startOnLoad: true });
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -324,47 +279,7 @@
     </div>
   </section>
 
-  <section id="gantt-chart-slide" style="background-image: url('images/system.jpg'); background-size: cover; background-position: center; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
-    <div style="position: relative; z-index: 2;">
-      
-      <div class="mermaid">
-        gantt
-          dateFormat  YYYY-MM-DD
-          title KOGEI 5-Year Business Plan
-
-          section Commerce
-          Online shop           :active,    com1, 2025-04-01, 2025-06-30
-          Kyoto Fair            :active,    com2, 2026-10-01, 2026-10-31
-
-          section Education
-          Platform dev          :active,    edu1, 2025-07-01, 2025-09-30
-          Launch                :active,    edu2, 2026-01-01, 2026-03-31
-
-          section Media
-          Newsletter/podcast    :active,    med1, 2025-10-01, 2025-12-31
-          Magazine              :active,    med2, 2026-04-01, 2026-06-30
-
-          section Artist Collaborations
-          Pilot                 :active,    art1, 2027-01-01, 2027-03-31
-          Full program          :active,    art2, 2027-07-01, 2027-09-30
-
-          section Major Milestones
-          Funding Seed $400K    :milestone, fund1, 2025-03-31, 2025-03-31
-          Funding Series A $800K:milestone, fund2, 2026-09-30, 2026-09-30
-          Funding Growth $1.5M  :milestone, fund3, 2028-03-31, 2028-03-31
-          Tokyo Cultural HQ Planning: milestone, hq1, 2026-01-01, 2026-12-31
-          Tokyo Cultural HQ Launch: milestone, hq2, 2027-01-01, 2027-12-31
-          International Paris   :milestone, int1, 2028-06-30, 2028-06-30
-          International Seoul   :milestone, int2, 2028-12-31, 2028-12-31
-          International Madrid  :milestone, int3, 2029-06-30, 2029-06-30
-          Self-sustainability Commerce: milestone, sscom, 2026-12-31, 2026-12-31
-          Self-sustainability Education: milestone, ssed, 2027-12-31, 2027-12-31
-          Self-sustainability Media: milestone, ssmed, 2027-12-31, 2027-12-31
-          Self-sustainability Artist Collab: milestone, ssart, 2027-12-31, 2027-12-31
-      </div>
-    </div>
-  </section>
+  
     <section style="background-image: url('images/building.jpg'); background-size: cover; background-position: center; position: relative;">
     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.6); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
