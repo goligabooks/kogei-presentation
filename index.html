@@ -6,12 +6,14 @@
   <title>Kogei Vision Deck</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
       background: #f4f4f4;
       color: #222;
+      height: 100%;
+      width: 100%;
     }
     section {
       display: flex;
@@ -23,6 +25,7 @@
       padding: 4rem;
       box-sizing: border-box;
       border: 10px solid #ccc;
+      height: 100vh;
     }
     section:last-child {
       border-bottom: 10px solid #ccc;
@@ -122,8 +125,8 @@
 
     #gantt-chart-slide .mermaid svg {
       width: 100%;
-      min-width: 1200px;
-      min-height: 600px;
+      min-width: 1500px;
+      min-height: 800px;
     }
 
     section {
